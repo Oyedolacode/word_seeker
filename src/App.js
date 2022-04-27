@@ -8,14 +8,14 @@ import Header from './components/Header/Header';
 function App() {
   const [word, setWord] = useState("");
   const [meanings, setMeanings] = useState([]);
+  const [category, setCategory] = useState("en");
+  const [LightTheme, setLightTheme] = useState(false);
 
   const dictionaryApi = async() => {
     try {
       const data = await axios.get(
-        "https://api.dictionaryapi.dev/api/v2/entries/en/plane"
+        `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
       );
-
-
       setMeanings(data.data);
     } catch (error){
     console.log(error);
@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     dictionaryApi();
 
-  }, [])
+  }, [word,category])
 
 
   return (
@@ -38,7 +38,12 @@ function App() {
    mdWidth="md"
    style={{ display: 'flex', flexDirection: 'column', height:'100vh' }}
    >
-    <Header />
+    <Header 
+    category={category} 
+    setCategory={setCategory}
+    word={word}
+    setWord={setWord}
+    />
    </Container>
     </div>
   );
