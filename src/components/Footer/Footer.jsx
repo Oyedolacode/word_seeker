@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
   return (
@@ -13,10 +15,10 @@ const Footer = () => {
       </span>
       <div className="iconContainer">
         <a href="https://twitter.com/Oyedola" target="__blank">
-        <FontAwesomeIcon icon="fab fa-twitter-square" />
+        <TwitterIcon />
         </a>
         <a href="https://www.linkedin.com/in/oluwasegun-oyedola/" target="__blank">
-          <i className="fab fa-linkedin fa-2x"></i>
+          <LinkedInIcon />
         </a>
         <a href="" target="__blank">
           <i className="fab fa-youtube fa-2x"></i>
