@@ -7,6 +7,7 @@ import Definitions from "./components/Definitions/Definitions";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
+
 function App() {
   const [word, setWord] = useState("");
   const [meanings, setMeanings] = useState([]);
@@ -28,7 +29,6 @@ function App() {
 
   useEffect(() => {
     dictionaryApi();
-    // eslint-disable-next-line
   }, [word, category]);
 
   const PurpleSwitch = withStyles({
